@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const Blockchain = require('../src/blockchain');
+const Blockchain = require('../src/blockchain/blockchain');
 const P2pserver = require('./p2p-server');
 
 const HTTP_PORT = process.env.HTTP_PORT || 3001;

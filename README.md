@@ -42,6 +42,8 @@ specify new HTTP_PORT and P2P_PORT and add to PEERS websocket port of the others
 
 ## Endpoints
 
+Assume `url = http://localhost:3001`
+
 ### GET Block
 To view block information send a `GET` request to one of the http ports at `{url}\blocks`
 Example: `http:\\localhost:3001\blocks`
@@ -53,5 +55,17 @@ To mine block make a `POST` request with json body to endpoint `{url}\mine`
     "data": "test"
 }`
 
+### GET Transactions
+To view all transactions send a `GET` request to `{url}\transactions`
+
+### POST Transaction
+To post transaction send a `POST` request to `{url}\transactions` with body
+
+`{
+    "data": {
+            "recipient": "r4ndom-4ddr355",
+            "amount": 20
+    }
+}`
 
 

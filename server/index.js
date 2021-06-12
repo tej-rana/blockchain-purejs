@@ -40,6 +40,10 @@ app.post('/transactions', (req, res) => {
    res.redirect('/transactions');
 });
 
+app.get('/addresses', (req, res) => {
+   res.json({address: wallet.publicKey});
+});
+
 app.listen(HTTP_PORT, () => {
    console.log(`listening on port ${HTTP_PORT}`);
 });

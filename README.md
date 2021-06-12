@@ -135,4 +135,13 @@ To post transaction send a `POST` request to `{url}\transactions` with body
 }
 ```
 
+### GET WALLET ADDRESS (PUBLIC KEY)
+To get wallet address for recipient send a `GET` request to `{url}\addresses`
 
+Your response looks like this.
+
+```
+{
+"address": "042015c376f8b593cf31d30d5db7fcc9923aa8fbc561bd7e67a492b8814078b8ab70e322f954cfcf59f329e88de68d8947dbe7f5d037612ed8f69cb6951d8718bd"
+}
+```

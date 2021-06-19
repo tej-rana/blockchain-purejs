@@ -1,5 +1,5 @@
-const BlockChain = require('../blockchain/blockchain');
-//const p2pServer = require('../blockchain');
+const Transaction = require('../wallet/transaction');
+const Wallet = require('../wallet');
 
 class Miner {
 
@@ -20,7 +20,15 @@ class Miner {
      */
     mine() {
         const validTransactions = this.transactionPool.validTransactions();
+        validTransactions.push(
+            Transaction.rewardTransaction(this.wallet, Wallet.blockchainWallet())
+        );
+        const block = this.blockchain.addBlock(validTransactions);
+        this.p2pServer.syncChains();
+        this.transactionPool.clear();
+        this.p2pServer.broadcastClearTransaction();
 
+        return block;
     }
 }
 

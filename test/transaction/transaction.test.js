@@ -68,7 +68,7 @@ describe('Transaction', () => {
          // wallet = miner's wallet
           transaction = Transaction.rewardTransaction(wallet, Wallet.blockchainWallet());
       });
-      
+
       it(`reward the miner's wallet`, () => {
          expect(transaction.outputs.find(o => o.address === wallet.publicKey). amount).toEqual(MINING_REWARD);
       });
